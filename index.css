@@ -26,6 +26,10 @@
     background: hsl(210, 10%, 75%);
 }
 
+.notbold{
+    font-weight:normal
+}​
+
 html
 {
     scroll-behavior:smooth;
@@ -58,7 +62,7 @@ body
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    backdrop-filter: blur(5px);
+
 }
 
 #rightBar
@@ -101,7 +105,7 @@ a:hover
     padding: 0;
     background-color: hsla(210, 10%, 90%, 0.75);
     box-shadow: 0px 1px 3.33px rgba(0,0,0,0.33);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
 }
 
 .topBarItemRight
@@ -116,6 +120,7 @@ p.topBarItemRight
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .topBarItem
@@ -126,8 +131,8 @@ p.topBarItemRight
 
 div#topBar img
 {
-    height: 80%;
-    margin-left: -10px;
+    height: 60%;
+    margin: 10px 20px 10px 0px;
 }
   
 .topBarItem a
@@ -225,7 +230,7 @@ li
 
 .liList a:active
 {
-    border: solid 1px white !important;
+    border: solid 1px transparent !important;
     margin: 6px !important;
 }
 
@@ -252,11 +257,26 @@ div.scrollView
     padding: 3px;
 }
 
+div.scrollViewBig
+{
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 15px;
+    padding: 3px;
+}
+
 div.scrollView img, div.scrollView div:not(.channel)
 {
     margin: 0;
     display: inline-block;
     height: 240px;
+}
+
+div.scrollViewBig img, div.scrollViewBig div:not(.channel)
+{
+    margin: 0;
+    display: inline-block;
+    height: 480px;
 }
 
 div.scrollView > div > img 
