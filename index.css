@@ -224,7 +224,7 @@ li
 .liList a:hover
 {
     text-decoration: none;
-    background-color: hsl(205, 100%, 50%);
+    background-color: rgb(0, 149, 255);
     color: white;
 }
 
@@ -317,6 +317,33 @@ div.channel a
     font-weight: bold;
     text-decoration: none;
 }
+
+button{
+
+    display: block;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+
+
+
+
+    border-radius: 9999px;
+
+    padding: 12.5px 25px;
+    text-align: center;
+    text-decoration: none;
+ 
+    font-size: large;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    border: 0px;
+    background-color: rgb(45, 124, 226);
+    color: white;
+  }
 
 div.channel a:hover
 {
