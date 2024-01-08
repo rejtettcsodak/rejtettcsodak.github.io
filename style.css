@@ -293,23 +293,31 @@ button:active {
 }
 
 .banner-foreground{
+    display: flex !important;
     position:absolute;
     z-index: 100;
     height: 100% !important;
-    align-self: stretch;
     min-width: 0px !important;
+    align-items: stretch !important;
+    justify-content: space-evenly !important;
 }
 
 .banner-foreground > div.image-container{
-    flex: 1;
-    align-self: stretch;
-    background-image: url(phone.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+
+    display: flex !important;
     margin-right: 50px;
-    margin-left: 50px;
-    min-width: 500px;
+    margin-left: 100px;
+    align-self: stretch;
+    min-width: 0px;
+
+}
+
+.banner-foreground > div.image-container > img{
+
+
+    min-width: 0px;
+ 
+    object-fit: contain;
 }
 
 
@@ -318,7 +326,7 @@ button:active {
     margin-left: 100px;
     align-self: center;
     color: white;
-
+    min-width: 0px;
 }
 
 .banner-foreground > div{
@@ -587,9 +595,29 @@ button:active {
         }
 
         .banner-foreground > div.image-container{
+            display: flex !important;
+
             margin-left: var(--container-margin);
             margin-right: var(--container-margin);
             min-width: 0px !important;
+            
+            justify-self: stretch !important;
+    
+
+            flex: 0 1 auto; 
+            overflow:auto;
+
+            height: auto !important;
+        }
+
+        
+        .banner-foreground > div.image-container > img{
+    
+            width: 100% !important;
+            height: auto !important;
+            min-height: 0px !important;
+            justify-self: stretch !important;
+       
         }
         
         
