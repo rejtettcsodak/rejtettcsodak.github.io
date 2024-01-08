@@ -305,8 +305,8 @@ button:active {
 .banner-foreground > div.image-container{
 
     display: flex !important;
-    margin-right: 50px;
-    margin-left: 100px;
+    margin-left: 25px;
+    margin-right: 100px;
     align-self: stretch;
     min-width: 0px;
 
@@ -323,6 +323,7 @@ button:active {
 
 .banner-foreground > div:not(.image-container){
 
+    margin-right: 25px;
     margin-left: 100px;
     align-self: center;
     color: white;
