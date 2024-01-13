@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favi.png">
+    <link rel="stylesheet" href="owl.carousel.css">
     <title>Marci599's website</title>
 </head>
 <body>
@@ -71,8 +72,84 @@
                 </div>
             </div>   
             <h3>Some of my projects</h3>
-            <h3>Games that I like</h3>
+            <main class="bd-grid owl-carousel">
+                <article class="card">  
+                    <img src="banner.png" alt="">
+                    <div>
+                        <h2>Koller Android</h2>
+                        <p>A mobile application for digital system made for colleges</p>
+                    </div>
+                </article>      
+                <article class="card">  
+                    <img src="https://play-lh.googleusercontent.com/heWYEK_hyMgXM1kyNj1UKaVUMLF3_xEiwB94A7FnqbTjwe3RC015nDhPthF5du-EtRc=w720-h310-rw" alt="">
+                    <div>
+                        <h2>Berek Zoltán</h2>
+                        <p>A story based 2D platformer game about a YouTuber</p>
+                    </div>
+                </article>     
+                <article class="card">  
+                    <img src="undercave.png" alt="">
+                    <div>
+                        <h2>UnderCave</h2>
+                        <p>A 3D survival game that takes place undergorund in unknown depths</p>
+                    </div>
+                </article>     
+                <article class="card">  
+                    <img src="daddice.png" alt="">
+                    <div>
+                        <h2>Dice Dad Saves the World</h2>
+                        <p>A short strategy game made for the GMTK Game Jam in two days</p>
+                    </div>
+                </article>     
+            </main>
+
+            <h3>Games I like</h3>
+            <main class="bd-grid owl-carousel">
+                <article class="card">  
+                    <img src="SMG_galaxy.jpg" alt="">    
+                    <div>
+                    <h2>Super Mario Galaxy 1, 2</h2> 
+                    </div>
+                </article>      
+                <article class="card">  
+                    <img src="RGH_stage.jpg" alt="">
+                    <div>
+                    <h2>Rabbids Go Home</h2>
+                </div>
+                </article>     
+                <article class="card">  
+                    <img src="WoG_stage.jpg" alt="">
+                    <div>
+                    <h2>World of Goo</h2>
+                </div>
+                </article>     
+                <article class="card">  
+                    <img src="Portal_stage.png" alt="">
+                    <div>
+                    <h2>Portal 2</h2>
+                </div>
+                </article>     
+                <article class="card">  
+                    <img src="PvZ_stage.jpg" alt="">
+                    <div>
+                    <h2>Plants vs Zombies</h2>
+                </div>
+                </article>    
+                <article class="card">  
+                    <img src="BS_stage.jpg" alt="">
+                    <div>
+                    <h2>Beat Saber</h2>
+                </div>
+                </article>    
+                <article class="card">  
+                    <img src="S_place.jpg" alt="">
+                    <div>
+                    <h2>Subnautica</h2>
+                </div>
+                </article>    
+            </main>
             <h3>Reach me at</h3>
+            <p>katona.m.b@gmail.com</p>
         </div> 
     </div>
     <div class="layout-horizontal navigationbar-div">
@@ -83,5 +160,43 @@
         <a href="" class="tab">Contact</a>
     </div>
     <script src="logic.js"></script>
+
+        <!-- Jquery CDN  -->
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<!-- Owl Slider  -->
+<script src="owl.carousel.js"></script>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    nav:true,
+    items: 3,
+    autoplay:true,
+    autoplayTimeout:2500,
+    autoplayHoverPause:true,
+    dots:false,
+    responsive:{
+        0:{
+             items:1
+         },
+         574:{
+             items:2
+         },
+         600:{
+             items:2
+         },
+         800:{
+             items:3
+         },
+
+      
+     }
+    
+})
+</script>
 </body>
 </html>
