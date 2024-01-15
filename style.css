@@ -61,6 +61,22 @@
     --transition-speed: 200ms;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+div:only-child{
+    font-size: 0px;
+}
+
+div.list{
+    display: flex;
+    gap: var(--container-margin);
+    flex-wrap: wrap;
+    margin-top: var(--container-margin);
+    margin-bottom: var(--container-margin);
+}
+
 html, body, div{
     scroll-behavior: smooth;
 }
@@ -126,6 +142,14 @@ p, h1, h2, h3, h4{
     padding: var(--container-small-margin);
 }
 
+h1{
+    font-size: xx-large;
+}
+
+h2{
+    font-size: x-large;
+}
+
 h3{
     margin-bottom: var(--text-margin);
     margin-top: var(--big-space);
@@ -152,6 +176,15 @@ a:hover{
     text-decoration: underline;
 }
 
+li{
+  
+}
+
+ul{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 img, iframe
 {
     border-radius: var(--border-radius);
@@ -166,10 +199,10 @@ div{
 }
 
 
-button, .primary {
+button, .button, .primary {
     cursor: pointer;
 
-    margin-top: var(--container-margin);
+    margin-bottom: 0px !important;
 
     width: fit-content;
 
@@ -177,12 +210,16 @@ button, .primary {
 
     padding: var(--button-padding);
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     display: inline-block;
 
     font-size: medium;
-  }
+}
 
+.button.singular, .primary.singular, button.singular{
+    margin-top: var(--container-margin);
+    margin-bottom: var(--container-margin);
+}
   
 .floating-bottun{
     bottom: 0px;
@@ -193,18 +230,18 @@ button, .primary {
     right: 0px;
 }
 
-button{
+button, .button{
     transition: background-color var(--transition-speed);
     background-color: transparent;
     border: var(--border);
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
-button:hover {
+button:hover, .button:hover {
     background-color: var(--hover-background-color);
 }
 
-button:active {
+button:active, .button:active {
     background-color: var(--click-background-color);
 }
 
@@ -558,30 +595,43 @@ button:active {
     gap: var(--container-margin);
 }
 
-.cards > div{
+
+.cards > a{
+    display: flex;
+    flex: 1;
+    color: white !important;
+    text-decoration: none !important;
+    transition: filter var(--transition-speed);
+}
+
+.cards > a > div, .cards > div{
     align-items: center;
     display: flex;
     background-color: var(--surface-higher-color);
     flex-direction: row;
     flex-wrap: nowrap;
-    flex: 1;
     justify-content: center;
     padding: var(--container-margin);
     border-radius: var(--border-radius);
+    flex: 1;
 }
 
-.cards > div p{
+
+.cards div p{
     height: min-content;
-    font-size: larger;
+    font-size: large;
 }
 
-.cards > div img{
+.cards div img{
     margin-right: var(--container-margin);
+    height: 35px;
+    width: 35px;
 }
 
 
 
 .summary-container{
+    background-color: var(--surface-higher-color);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -589,16 +639,18 @@ button:active {
     overflow: hidden;
     height: 300px;
     transition: filter var(--transition-speed);
-    cursor: pointer;
-    margin-right: 7.5px;
-    margin-left: 7.5px;
+    cursor: grab;
+    margin-right: 7.5px !important;
+    margin-left: 7.5px !important;
+    border-radius: var(--border-radius);
 }
 
-.summary-container:hover{
+
+.cards > a:hover{
      filter: var(--hover-darkness);
 }
 
-.summary-container:active{
+.cards > a:active{
     filter: var(--click-darkness);
 }
 
@@ -619,6 +671,7 @@ button:active {
     font-weight: 300;
     padding-left: 16.46px;
     padding-right: 16.46px;
+    color: var(--text-color) !important;
     background-color: var(--secondary-color);
     border-radius: 100px;
     box-shadow: var(--box-shadow);
@@ -652,9 +705,18 @@ button:active {
     text-shadow: var(--box-shadow);
    
 }
-.summary-container > img{
+.summary-container > img, .summary-container > iframe{
     height: 100%;
+
+    width: 100%;
+}
+
+.summary-container > img, img.summary-container{
     object-fit: cover;
+}
+
+img.keep-aspect-ratio{
+    object-fit: contain;
 }
 
 button.owl-prev{
@@ -839,7 +901,7 @@ button.owl-prev, button.owl-next{
 
                 .tab{
                     display: flex;
-                    font-size: smaller;
+                    font-size: 13px !important;
                     padding-left: 10px;
                     padding-right: 10px;    
                     flex: 1;    

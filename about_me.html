@@ -1,60 +1,74 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hundefriseur Neko</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.svg" type="image/svg">
+    <link rel="icon" type="image/x-icon" href="favi.png">
+    <script src="logic.js"></script>
+    <title>Marci599's website</title>
 </head>
 <body>
-    <div class="main-div">
-        <input id="check01" type="checkbox" name="menu" />
-        <ul class="submenu">
-            <li><a href="index.html">Hauptseite</a></li>
-            <li><a href="about_me.html" class="submenu-selected">Über mich</a></li>
-            <li><a href="pictures.html">Bilder</a></li>
-            <li><a href="price_list.html">Preisliste</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-        <div style="z-index: 2; width: 100%;">
-            <div class="header-div">
-                <div class="direction-on-size-3 header-div-content">
-                    <label for="check01"  class="toolbar-menu-button"><img src="menu.svg" alt="menu"></label>
-                    <a href="index.html" class="layout-horizontal header-logo-div">
-                        <img src="logo.svg" alt="Logo" class="image-logo">
-                        <h1 class>Hundefriseur<br>Neko</h1>
-                    </a>    
-                    <div class="layout-horizontal toolbar-div">
-                        <a href="index.html" class="toolbar-button">Hauptseite</a>
-                        <a href="about_me.html" class="toolbar-button toolbar-button-selected">Über mich</a>
-                        <a href="pictures.html" class="toolbar-button">Bilder</a>
-                        <a href="price_list.html" class="toolbar-button">Preisliste</a>
-                        <a href="contact.html" class="toolbar-button">Kontakt</a>
-                    </div>
-                </div>
+    <div class="webbar">
+        <div class="direction-on-size-3">
+            <a href="index.html" class="layout-horizontal toolbar">
+                <img src="icon.png" alt="Logo">
+                <h1 class>Marci599's site</h1>
+            </a>    
+            <div class="layout-horizontal tab-layout">
+                <a href="index.html" class="tab">Home</a>
+                <a href="about_me.html" class="tab selected">About me</a>
+                <a href="projects.html" class="tab">Projects</a>
+                <a href="favorite_games.html" class="tab">Favorite games</a>
+                <a href="contact.html" class="tab">Contact</a>
             </div>
         </div>
-        <div class="main-body-div">
-            
-            <div class="div-content">
-
-                <div class="direction-on-size" style="margin-top: 25px;">
-                    <img src="me.jpg" alt="Bild von mir" class="large-image">
-                    <div class="align-up">
-                        <p class="large">Ich habe Tiere schon immer geliebt. Ich habe selbst einen Hund und beschloss 2015, in Ungarn eine Ausbildung zur Hundefriseurin zu machen. Ich habe die Prüfungen mit gutem Erfolg bestanden. Im Jahr 2022 bin ich nach Österreich gezogen und möchte Kunden helfen, die aus irgendeinem Grund nicht zu einem Hundefriseur kommen können. Ich komme gerne zu Ihnen nach Hause und gebe Ihrem Hund eine Schönheitsbehandlung, ohne dass Sie Ihr Haus verlassen müssen.
-                        </p>
-                    </div>
-        
-                </div>
-                <h3>Diplom</h3>
-                <div class="direction-on-size align-center" style="margin-top: 25px;">
-                    <img src="page1.png" alt="Erste Seite meines Diploms" class="full-image round-left-on-size">
-                    <img src="page2.png" alt="Zweite Seite meines Diploms" class="full-image round-right-on-size">
-                </div>  
-            </div> 
-        </div>
     </div>
+    <div class="main-scroll-area">
+        <div class="main-content" style="margin-top: var(--container-margin);">
+            <div class="direction-on-size">
+                <div class="large-image-container">
+                    <img src="me_top.png" alt="Bild von mir">
+                    <img src="me_base.png" alt="Bild von mir" class="large-image">
+                </div>
+                <div>
+                    <h3 class="large include-my-head">introduction</h3>
+                    <p>Hello! I'm Márton Barnabás Katona, <span id="age"></span> years old. I was born in Hungary and went to elementary school in Budaörs. Currently, I am studying in the one and only <a href="https://www.puskas.hu/100/" target="_blank">BMSZC Puskás Tivadar Távközlési és Informatikai Technikum</a>. Meanwhile, my family moved to Graz, Austria, so I am completing high school from a student hostel.</p>
+                    <p>Most of my free time is dedicated to programming since my childhood, but my hobbies also include image editing, graphic design, UI & UX design, video editing, animating and of course playing video games. You can find examples of my work on the <a href="projects.html">Projects</a> tab. Since my only income is from scholarship, if you are interested you can <a href="https://www.fiverr.com/marci599" target="_blank">commision me on Fiverr</a>.</p>
+                    <p>In the near future, I would like to find a job in an IT company, and in the distant future, my goal is to establish my own company. I know myself as a person who always sets big plans and does everything to make them into reality.</p>
+                    <div class="list">
+                        <button onclick="location.href='projects.html'" type="button" class="primary">Projects</button>
+                        <button onclick="location.href='contact.html'" type="button">Contact</button>
+                        <button onclick="location.href='favorite_games.html'" type="button">Favorite games</button>
+                    </div>
+
+                </div>
+            </div> 
+            <h3>Socials</h3>
+            <div class="chip-group">
+                <a href="https://www.youtube.com/channel/UCVeXQbfT1D1-Rwcls27QbDA" target="_blank">YouTube (main)</a>
+                <a href="https://www.youtube.com/channel/UCoGvvj66VQtwIF5OfVdt0hQ" target="_blank">YouTube (Hungarian)</a>
+                <a href="https://www.youtube.com/channel/UCAAkJcH5mQLerfRQy4u6Cqg" target="_blank">YouTube (dev)</a>
+                <a href="https://www.tiktok.com/@marci5990" target="_blank">TikTok</a>
+                <a href="https://dsc.gg/undercave" target="_blank">Discord</a>
+                <a href="https://twitter.com/K_Marci599" target="_blank">X</a>
+                <a href="https://www.threads.net/@k_marci599" target="_blank">Threads</a>
+                <a href="https://wetdry.world/@K_Marci599" target="_blank">Mastodon</a>
+                <a href="https://www.reddit.com/user/Big_Nefariousness269" target="_blank">Reddit</a>
+                <a href="https://github.com/Marci599" target="_blank">GitHub</a>
+                <a href="https://play.google.com/store/apps/dev?id=5632047545523684053" target="_blank">Play Store</a>
+                <a href="https://gamejolt.com/@RalixStudio" target="_blank">Game Jolt</a>
+            </div>  
+        </div> 
+    </div>
+    <div class="layout-horizontal navigationbar-div">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about_me.html" class="tab selected">About me</a>
+        <a href="projects.html" class="tab">Projects</a>
+        <a href="favorite_games.html" class="tab">Favorite games</a>
+        <a href="contact.html" class="tab">Contact</a>
+    </div>
+    <script src="logic.js"></script>
 </body>
 </html>

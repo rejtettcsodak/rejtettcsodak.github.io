@@ -1,65 +1,58 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hundefriseur Neko</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.svg" type="image/svg">
+    <link rel="icon" type="image/x-icon" href="favi.png">
+    <script src="logic.js"></script>
+    <title>Marci599's website</title>
 </head>
 <body>
-    <div class="main-div">
-        <input id="check01" type="checkbox" name="menu" />
-        <ul class="submenu">
-            <li><a href="index.html">Hauptseite</a></li>
-            <li><a href="about_me.html">Über mich</a></li>
-            <li><a href="pictures.html">Bilder</a></li>
-            <li><a href="price_list.html">Preisliste</a></li>
-            <li><a href="contact.html" class="submenu-selected">Kontakt</a></li>
-        </ul>
-        <div style="z-index: 2; width: 100%;">
-            <div class="header-div">
-                <div class="direction-on-size-3 header-div-content">     
-                    <label for="check01"  class="toolbar-menu-button"><img src="menu.svg" alt="menu"></label>
-                    <a href="index.html" class="layout-horizontal header-logo-div">
-                        <img src="logo.svg" alt="Logo" class="image-logo">
-                        <h1 class>Hundefriseur<br>Neko</h1>
-                    </a>    
-                    <div class="layout-horizontal toolbar-div">
-                        <a href="index.html" class="toolbar-button">Hauptseite</a>
-                        <a href="about_me.html" class="toolbar-button">Über mich</a>
-                        <a href="pictures.html" class="toolbar-button">Bilder</a>
-                        <a href="price_list.html" class="toolbar-button">Preisliste</a>
-                        <a href="contact.html" class="toolbar-button toolbar-button-selected">Kontakt</a>
-                    </div>
-                </div>
+    <div class="webbar">
+        <div class="direction-on-size-3">
+            <a href="index.html" class="layout-horizontal toolbar">
+                <img src="icon.png" alt="Logo">
+                <h1 class>Marci599's site</h1>
+            </a>    
+            <div class="layout-horizontal tab-layout">
+                <a href="index.html" class="tab">Home</a>
+                <a href="about_me.html" class="tab">About me</a>
+                <a href="projects.html" class="tab">Projects</a>
+                <a href="favorite_games.html" class="tab">Favorite games</a>
+                <a href="contact.html" class="tab selected">Contact</a>
             </div>
         </div>
-        <div class="main-body-div">
-            
-            <div class="div-content" style="width: fit-content; margin-top: 15px;">
-                <div class="align-hor">
-                    <img src="call.svg" alt="Telefonsymbol"  class="icon">
-                    <p class="contact-text">Telefonnummer: </p>
-                    <p class="contact-text-right">+43 690 10153669</p>
+    </div>
+    <div class="main-scroll-area">
+        <div class="main-content">
+            <h3>Reach me at</h3>
+            <div class="cards">
+                <div>
+                    <img src="mail.svg" alt="">
+                    <p>katona.m.b@gmail.com</p>
                 </div>
-                <div class="align-hor">
-                    <img src="mail.svg" alt="Mail-Symbol" class="icon">
-                    <p class="contact-text">Email: </p>
-                    <p class="contact-text-right">nekohundefriseur@gmail.com</p>
+                <div>
+                    <img src="discord-icon-svgrepo-com.svg" alt="">
+                    <p>marci599</p>
                 </div>
-                <div class="align-hor">
-                    <img src="facebook.webp" alt="Facebook-Symbol" class="icon">
-                    <p class="contact-text">Facebook-Seite: </p>
-                    <p class="contact-text-right"><a href="https://www.facebook.com/profile.php?id=100092718116894" target="_blank">Neko Hundefriseur</a></p>
-                </div>
-                
-    
-    
-            </div> 
-        </div>
+                <a href="https://www.fiverr.com/marci599" target="_blank">
+                    <div>
+                        <img src="fiverr_logo.png" alt="">
+                        <p>@marci599</p>
+                    </div>
+                </a>
+
+            </div>
+        </div> 
+    </div>
+    <div class="layout-horizontal navigationbar-div">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about_me.html" class="tab">About me</a>
+        <a href="projects.html" class="tab">Projects</a>
+        <a href="favorite_games.html" class="tab">Favorite games</a>
+        <a href="contact.html" class="tab selected">Contact</a>
     </div>
 </body>
-
 </html>
