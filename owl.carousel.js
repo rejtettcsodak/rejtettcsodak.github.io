@@ -856,6 +856,8 @@
 	 * @param {Event} event - The event arguments.
 	 */
 	Owl.prototype.onDragEnd = function(event) {
+		this._time = 0;
+
 		var delta = this.difference(this._drag.pointer, this.pointer(event)),
 			stage = this._drag.stage.current,
 			direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
@@ -2977,7 +2979,7 @@
 		slideBy: 1,
 		dotClass: 'owl-dot',
 		dotsClass: 'owl-dots',
-		dots: true,
+		dots: false,
 		dotsEach: false,
 		dotsData: false,
 		dotsSpeed: false,
@@ -3206,6 +3208,7 @@
 	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
 	 */
 	Navigation.prototype.next = function(speed) {
+		this._time = 0;
 		$.proxy(this._overrides.to, this._core)(this.getPosition(true), speed);
 	};
 
@@ -3215,6 +3218,7 @@
 	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
 	 */
 	Navigation.prototype.prev = function(speed) {
+		this._time = 0;
 		$.proxy(this._overrides.to, this._core)(this.getPosition(false), speed);
 	};
 

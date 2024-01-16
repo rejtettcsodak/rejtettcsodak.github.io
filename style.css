@@ -44,6 +44,7 @@
     --arrow-height: 50px;
 
     --button-padding: 10px 20px;
+    --button-padding-with-outline: 8px 18px;
 
     --chip-corner-radius: 7.5px;
     --chip-padding: 8px 14px;
@@ -65,7 +66,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-div:only-child{
+div:not(.main-content, .main-scroll-area){
     font-size: 0px;
 }
 
@@ -160,12 +161,14 @@ h3{
 h4{
     margin-top: var(--text-margin);
     font-weight: var(--semibold);
-    font-size: large;
+    font-size: large !important;
 }
 
 a{
     color: var(--primary-color);
     text-decoration: none;
+    width: fit-content;
+    height: fit-content;
 }
 
 a:visited{
@@ -176,9 +179,25 @@ a:hover{
     text-decoration: underline;
 }
 
-li{
-  
+.align-children-images-to-start img{
+    margin-left: var(--container-margin);
+    align-self: flex-start;
 }
+
+.align-children-images-to-start p{
+    text-align: justify;
+}
+
+.align-children-title-images-to-center a{
+    display: block;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: var(--big-space);
+    margin-bottom: var(--text-margin);
+    transition: filter var(--transition-speed);
+}
+
 
 ul{
   margin-top: 0px;
@@ -208,7 +227,6 @@ button, .button, .primary {
 
     border-radius: 9999px;
 
-    padding: var(--button-padding);
     text-align: center;
     text-decoration: none !important;
     display: inline-block;
@@ -217,8 +235,8 @@ button, .button, .primary {
 }
 
 .button.singular, .primary.singular, button.singular{
-    margin-top: var(--container-margin);
-    margin-bottom: var(--container-margin);
+    margin-top: var(--container-margin) !important;
+    margin-bottom: var(--container-margin) !important;
 }
   
 .floating-bottun{
@@ -235,6 +253,7 @@ button, .button{
     background-color: transparent;
     border: var(--border);
     color: var(--primary-color) !important;
+    padding: var(--button-padding-with-outline);
 }
 
 button:hover, .button:hover {
@@ -248,6 +267,7 @@ button:active, .button:active {
 .primary,.secondary {
     transition: filter var(--transition-speed);
     border: none;  
+    padding: var(--button-padding);
 }
 
 .primary {
@@ -260,11 +280,17 @@ button:active, .button:active {
     color: var(--secondary-text-color) !important; 
 }
 
-.primary:hover,.secondary:hover {
+.primary:hover,.secondary:hover,
+.align-children-title-images-to-center a:hover,
+button.owl-next:hover,
+button.owl-prev:hover {
     filter: var(--hover-darkness);
 }
 
-.primary:active,.secondary:active {
+.primary:active,.secondary:active,
+.align-children-title-images-to-center a:active,
+button.owl-next:active,
+button.owl-prev:active {
     filter: var(--click-darkness);
 }
 
@@ -353,7 +379,7 @@ button:active, .button:active {
 
 
     min-width: 0px;
- 
+    width: unset !important;
     object-fit: contain;
 }
 
@@ -479,6 +505,7 @@ button:active, .button:active {
 
 
 .main-content{
+    
     margin: auto;
     max-width: var(--page-width);
     padding-left: 10px;
@@ -580,11 +607,6 @@ button:active, .button:active {
     margin-top: 34.55px !important;
 }
 
-.bd-grid{
-
-
-    
-}
 
 .cards{
     display: flex;
@@ -628,6 +650,11 @@ button:active, .button:active {
     width: 35px;
 }
 
+img{
+    width: 400px;
+    height: auto;
+}
+
 
 
 .summary-container{
@@ -659,8 +686,8 @@ button:active, .button:active {
 
 
     position: absolute;
-    top: calc(50% - 40px);
-   
+    top: calc(50% - 47px / 2);
+    transition: filter var(--transition-speed) !important;
 }
 
 
@@ -675,6 +702,7 @@ button:active, .button:active {
     background-color: var(--secondary-color);
     border-radius: 100px;
     box-shadow: var(--box-shadow);
+
 }
 
 .summary-container > div, .summary-container > h2{
@@ -776,6 +804,12 @@ button.owl-prev, button.owl-next{
             .large-image-container{
                 display: block;
                 align-self:center;
+            }
+
+            .align-children-images-to-start img{
+                align-self: center;
+                margin-left: 0px;
+                margin-top: var(--container-margin);
             }
 
             .main-scroll-area{
