@@ -872,6 +872,12 @@ button.owl-prev, button.owl-next{
 
             @media (max-width: 546px) {
             
+                img{
+                    width: 100%;
+        
+                    height: auto;
+                }
+
                 .tab-layout{
                     display: none;
                 }
