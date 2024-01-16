@@ -688,7 +688,7 @@ img{
 
     position: absolute;
     top: calc(50% - 47px / 2);
-    transition: filter var(--transition-speed) !important;
+  
 }
 
 
@@ -760,7 +760,7 @@ button.owl-next{
 
 button.owl-prev, button.owl-next{
   
-    transition: margin var(--transition-speed);
+    transition: margin var(--transition-speed), filter var(--transition-speed) ;
 
 }
 
