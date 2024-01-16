@@ -188,7 +188,7 @@ a:hover{
     text-align: justify;
 }
 
-.align-children-title-images-to-center a{
+.align-children-title-images-to-center > a{
     display: block;
     width: fit-content !important;
     margin-left: auto !important;
@@ -206,6 +206,7 @@ ul{
 
 img, iframe
 {
+    border: 0px;
     border-radius: var(--border-radius);
 }
 
