@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favi.png">
+    <link rel="stylesheet" href="owl.carousel.css">
+    <title>Puskas 2020b 11.B</title>
+</head>
+<body>
+    <div class="webbar">
+        <div class="direction-on-size-3">
+            <a href="jesus.html" class="layout-horizontal toolbar">
+                <img src="media/jesus/puskas2020b_logo.png" alt="Logo">
+                <h1 class>Puskás 2020b 11.B</h1>
+            </a>    
+            <div class="layout-horizontal tab-layout">
+                <a href="index.html" class="tab">Kezdőlap</a>
+                <a href="nagyban.html" class="tab">10.B</a>
+                <a href="china.html" class="tab selected">11.B</a>
+                <a href="jesus.html" class="tab">12.B</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-scroll-area">
+
+        <div class="banner jesus">
+            <div class="direction-on-size banner-foreground jesus">
+                <div>
+                    <h1>Mao Ce-tung</h1>   
+                    <h2>Lezsák Dominik</h2>   
+                    <h3>W.I.P.</h3>
+                </div>
+                <div class="image-container">
+                    <img src="media/" alt="Koller application">
+                </div>
+            </div>
+            <img src="media/" alt="Banner">
+        </div>
+
+        <a href="#about-me"><img src="more.svg" alt="down arrow" class="arrow"></a>
+ 
+        <div class="main-content">
+        </div>
+    </div>
+    <div class="layout-horizontal navigationbar-div">
+        <a href="index.html" class="tab">Kezdőlap</a>
+        <a href="jesus.html" class="tab">10.B</a>
+        <a href="jesus.html" class="tab selected">11.B</a>
+        <a href="jesus.html" class="tab">12.B</a>
+    </div>
+    <script src="logic.js"></script>
+
+        <!-- Jquery CDN  -->
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<!-- Owl Slider  -->
+<script src="owl.carousel.js"></script>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    nav:true,
+    items: 3,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    dots:false ,
+    responsive:{
+        0:{
+             items:1
+         },
+        700:{
+             items:2
+         },
+         1000:{
+             items:3
+         }   
+     }
+})
+</script>
+</body>
+</html>
