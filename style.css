@@ -742,9 +742,18 @@ img{
 
 .summary-container.jesus > p{
 
-   padding: var(--container-margin);
+ 
    padding-top: var(--big-space) !important;
 }
+
+.summary-container.center > div{
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    background: none !important;
+ }
 
 .summary-container > h2{
     width: 100%;
