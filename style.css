@@ -771,10 +771,13 @@ img{
     text-shadow: var(--box-shadow);
    
 }
-.summary-container > img, .summary-container > iframe{
+.summary-container > img, .summary-container iframe, .summary-container > a{
     height: 100%;
-
     width: 100%;
+}
+
+.summary-container > a > iframe{
+    pointer-events : none;
 }
 
 .summary-container > img, img.summary-container{
