@@ -374,7 +374,30 @@ button.owl-prev:active {
     align-self: stretch;
     min-width: 0px;
 
+    animation-name: floatFromRight; 
+    animation-duration: 1s; 
+    animation-iteration-count: 1; 
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
 }
+
+@keyframes floatFromRight { 
+    0% {
+        transform: translate(125px,  0px);
+        opacity: 0;} 
+    100%   {
+        transform: translate(0px, 0px);
+        opacity: 1;}     
+} 
+
+@keyframes floatFromLeft { 
+    0% {
+        transform: translate(-125px,  0px);
+        opacity: 0;} 
+    100%   {
+        transform: translate(0px, 0px);
+        opacity: 1;}     
+} 
 
 .banner-foreground > div.image-container > img{
 
@@ -396,6 +419,11 @@ button.owl-prev:active {
     align-self: center;
     color: white;
     min-width: 0px;
+
+    animation-name: floatFromLeft; 
+    animation-duration: 1s; 
+    animation-iteration-count: 1; 
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
 .banner-foreground.jesus > div:not(.image-container){
