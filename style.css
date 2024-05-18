@@ -26,6 +26,9 @@
     --hover-darkness: brightness(80%);
     --click-darkness: brightness(60%);
 
+    --hover-brightness: brightness(120%);
+    --click-brightness: brightness(140%);
+
     --box-shadow: 0px 1px 3.33px rgba(0,0,0,0.33);
 
     --border: var(--border-size) solid var(--outline-color);
@@ -716,16 +719,46 @@ img{
     align-items: center;
     overflow: hidden;
     height: 300px;
-    transition: filter var(--transition-speed);
+    transition: all var(--transition-speed);
     cursor: grab;
     margin-right: 7.5px !important;
     margin-left: 7.5px !important;
     border-radius: var(--border-radius);
+    color: white;
+    border: 0px solid white;
+    box-sizing:border-box
+
 }
 
+.summary-container:visited{
+    color: white;
+
+}
+
+a.summary-container:hover{
+    filter: var(--hover-brightness);
+    border: 2.5px solid white;
+  
+}
+
+a.summary-container:active{
+    filter: var(--click-brightness);
+    border: 5px solid white;
+
+}
+
+.summary-container:hover img{
+    border-radius: 7.5px;
+
+}
+
+.summary-container:active img{
+    border-radius: 5px;
+}
 
 .cards > a:hover{
      filter: var(--hover-darkness);
+
 }
 
 .cards > a:active{
