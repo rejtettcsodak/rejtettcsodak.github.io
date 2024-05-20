@@ -4,7 +4,7 @@
     --background-color: rgb(11, 17, 22);
     --text-color: white;
 
-    --primary-color: rgb(110, 185, 245);
+    --primary-color: #6eb9f5;
     --primary-text-color: rgb(0, 0, 0);
 
     --secondary-color: rgb(81, 97, 114);
@@ -62,7 +62,7 @@
 
     --semibold: 500;
 
-    --transition-speed: 200ms;
+    --transition-speed: 100ms;
 }
 
 * {
@@ -237,6 +237,24 @@ button, .button, .primary {
 
     font-size: medium;
 }
+
+.button img, .primary img{
+    height: 20px !important;
+    width: auto;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    margin-right: -5px;
+    margin-left: 5px;
+}
+
+.button img{
+    filter: brightness(0) saturate(100%) invert(60%) sepia(76%) saturate(529%) hue-rotate(181deg) brightness(104%) contrast(92%);
+}
+
+.primary img{
+    filter: brightness(0) saturate(100%);
+}
+
 
 .button.singular, .primary.singular, button.singular{
     margin-top: var(--container-margin) !important;
@@ -709,6 +727,9 @@ img{
     height: auto;
 }
 
+#me{
+    cursor: pointer;
+}
 
 
 .summary-container{
@@ -726,14 +747,20 @@ img{
     border-radius: var(--border-radius);
     color: white;
     border: 0px solid white;
-    box-sizing:border-box
+    box-sizing:border-box;
+    width:auto;
+}
 
+p.carousel-title{
+    font-weight: 500;
+    margin-top: 10px;
 }
 
 .summary-container:visited{
     color: white;
 
 }
+
 
 a.summary-container:hover{
     filter: var(--hover-brightness);
@@ -747,12 +774,19 @@ a.summary-container:active{
 
 }
 
-.summary-container:hover img{
+a.summary-container img{
+    border-radius: var(--border-radius);
+    transition: all !important;
+
+}
+
+
+a.summary-container:hover img{
     border-radius: 7.5px;
 
 }
 
-.summary-container:active img{
+a.summary-container:active img{
     border-radius: 5px;
 }
 
@@ -774,7 +808,9 @@ a.summary-container:active{
   
 }
 
-
+b{
+    font-weight: 500;
+}
 
 .owl-carousel .owl-nav button.owl-prev span, .owl-carousel .owl-nav button.owl-next span{
     margin-top: 0px !important;
@@ -789,7 +825,7 @@ a.summary-container:active{
 
 }
 
-.summary-container > div, .summary-container > h2, .summary-container > p{
+.summary-container > div, .summary-container > h2, .summary-container > h3, .summary-container > p{
     position: absolute;
 
     bottom: 0px;
@@ -797,8 +833,26 @@ a.summary-container:active{
    padding: var(--container-margin);
    border-bottom-left-radius: var(--border-radius);
    border-bottom-right-radius: var(--border-radius);
+   margin-bottom: 0px;
    box-sizing: border-box;
    width: 100%;
+}
+
+.summary-container > h3{
+    text-align: center;
+    font-size:large;
+    padding-top: var(--big-space) !important;
+}
+
+a.summary-container img:last-child{
+    position: absolute;
+    width: 75px;
+    height: auto;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .summary-container.jesus > p{
@@ -807,7 +861,7 @@ a.summary-container:active{
    padding-top: var(--big-space) !important;
 }
 
-.summary-container.center > div{
+.summary-container.center > div, .summary-container.center > h2{
 
     padding: 40px;
     height: 100%;
@@ -836,10 +890,6 @@ a.summary-container:active{
 .summary-container > img, .summary-container iframe, .summary-container > a{
     height: 100%;
     width: 100%;
-}
-
-.summary-container > a > iframe{
-    pointer-events : none;
 }
 
 .summary-container > img, img.summary-container{

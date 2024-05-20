@@ -3126,12 +3126,13 @@
 			index = this._core.relative(this._core.current()),
 			loop = settings.loop || settings.rewind;
 
-		this._controls.$relative.toggleClass('disabled', !settings.nav || disabled);
+		this._controls.$relative.toggleClass('disabled', !settings.nav || false);
 
 		if (settings.nav) {
 			this._controls.$previous.toggleClass('disabled', !loop && index <= this._core.minimum(true));
 			this._controls.$next.toggleClass('disabled', !loop && index >= this._core.maximum(true));
 		}
+
 
 		this._controls.$absolute.toggleClass('disabled', !settings.dots || disabled);
 
