@@ -159,13 +159,13 @@ p
 
 }
 
-.classelement > div > div:last-child{
+.classelement > div > div{
     margin-top: 1vh !important;
 }
 
 .name, .class{
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgb(255, 255, 255);
     border-radius: 10vh;
     padding: 0.5vh;
 }
