@@ -19,4 +19,8 @@ document.getElementById("me").addEventListener("click", (event) => {
         window.alert("You will be redirected to my old site");
         window.open("old/index.html","_self");
     }
- });
+});
+
+
+
+ 

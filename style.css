@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --background-color: rgb(11, 17, 22);
-    --text-color: white;
+
+
+    --background-color:white;
+
+    --text-color: black;
 
     --primary-color: #6eb9f5;
-    --primary-text-color: rgb(0, 0, 0);
+    --primary-text-color: white;
 
     --secondary-color: rgb(81, 97, 114);
-    --secondary-text-color: rgb(255, 255, 255);
+    --secondary-text-color: black;
 
     --surface-low-color: rgba(215, 233, 247, 0.5);
     --surface-color: rgba(39, 44, 48, 0.5);
@@ -16,12 +19,14 @@
     --surface-high-color: rgba(83, 107, 126, 0.5);
     --surface-highest-color: rgba(113, 151, 182, 0.5);
 
-    --outline-color: rgba(255, 255, 255, 0.75);
+    --outline-color: rgba(0, 0, 0, 0.75);
 
-    --surface-text-color: rgb(255, 255, 255);
+    --surface-text-color: black;
 
     --hover-background-color: rgba(255, 255, 255, 0.1);
     --click-background-color: rgba(255, 255, 255, 0.2);
+
+    --box-shadow: 0px 1px 3.33px rgba(0, 0, 0, 0.33);
 
     --hover-darkness: brightness(80%);
     --click-darkness: brightness(60%);
@@ -29,7 +34,7 @@
     --hover-brightness: brightness(120%);
     --click-brightness: brightness(140%);
 
-    --box-shadow: 0px 1px 3.33px rgba(0,0,0,0.33);
+
 
     --border: var(--border-size) solid var(--outline-color);
 
@@ -46,7 +51,9 @@
 
     --arrow-height: 50px;
 
-    --button-padding: 10px 20px;
+    --button-padding-vertical: 10px;
+    --button-padding-horizontal: 20px;
+    --button-padding: var(--button-padding-vertical) var(--button-padding-horizontal);
     --button-padding-with-outline: 9px 19px;
 
     --chip-corner-radius: 7.5px;
@@ -65,9 +72,37 @@
     --transition-speed: 100ms;
 }
 
+
+@media (prefers-color-scheme: dark) {
+    :root {
+
+        --background-color:rgb(11, 17, 22);
+
+        --text-color: white;
+    
+        --primary-color: #6eb9f5;
+        --primary-text-color: black;
+    
+        --secondary-color: rgb(81, 97, 114);
+        --secondary-text-color: white;
+    
+        --surface-low-color: rgba(215, 233, 247, 0.5);
+        --surface-color: rgba(39, 44, 48, 0.5);
+        --surface-higher-color: rgba(59, 71, 80, 0.5);
+        --surface-high-color: rgba(83, 107, 126, 0.5);
+        --surface-highest-color: rgba(113, 151, 182, 0.5);
+    
+        --outline-color: rgba(255, 255, 255, 0.75);
+    
+        --surface-text-color: white;
+    }
+}
+
+
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
 
 div:not(.main-content, .main-scroll-area){
     font-size: 0px;
@@ -559,6 +594,7 @@ button.owl-prev:active {
 } 
 
 .webbar{
+    display: flex;
     background-color: var(--surface-color);
     max-width: 100% !important;
     width: 100% !important;
@@ -568,6 +604,31 @@ button.owl-prev:active {
 .webbar > div{
     max-width: var(--page-width);
     margin: auto;
+}
+
+#icon-sun, #icon-moon{
+display: flex;
+width: auto;
+padding: var(--button-padding-vertical);
+margin: var(--text-margin);
+border-radius: 100%;
+transition: background-color, var(--transition-speed);
+}
+
+#icon-sun:hover, #icon-moon:hover{
+    background-color: var(--hover-background-color);
+}
+
+#icon-sun:active, #icon-moon:active{
+    background-color: var(--click-background-color);
+}
+
+#icon-sun {
+
+  }
+  
+#icon-moon {
+
 }
 
 
