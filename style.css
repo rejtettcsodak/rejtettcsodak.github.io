@@ -6,33 +6,39 @@
     --background-color:white;
 
     --text-color: black;
+    --select-color: var(--surface-low-color);
 
-    --primary-color: #6eb9f5;
+    --primary-color: #2481eb;
+    --primary-overlay: brightness(0) saturate(100%) invert(40%) sepia(26%) saturate(5343%) hue-rotate(197deg) brightness(99%) contrast(87%);
     --primary-text-color: white;
 
-    --secondary-color: rgb(81, 97, 114);
+    --secondary-color: rgb(143, 173, 223);
     --secondary-text-color: black;
 
-    --surface-low-color: rgba(215, 233, 247, 0.5);
-    --surface-color: rgba(39, 44, 48, 0.5);
-    --surface-higher-color: rgba(59, 71, 80, 0.5);
-    --surface-high-color: rgba(83, 107, 126, 0.5);
-    --surface-highest-color: rgba(113, 151, 182, 0.5);
+    --surface-low-color: rgb(235, 243, 250);
+    --surface-color: rgb(212, 220, 231);
+    --surface-higher-color: rgb(159, 174, 196);
+    --surface-high-color: rgb(130, 147, 173);
+    --surface-highest-color: rgb(95, 114, 143);
 
     --outline-color: rgba(0, 0, 0, 0.75);
 
     --surface-text-color: black;
 
-    --hover-background-color: rgba(255, 255, 255, 0.1);
-    --click-background-color: rgba(255, 255, 255, 0.2);
+    --hover-background-color: rgba(0, 0, 0, 0.1);
+    --click-background-color: rgba(0, 0, 0, 0.2);
 
     --box-shadow: 0px 1px 3.33px rgba(0, 0, 0, 0.33);
 
-    --hover-darkness: brightness(80%);
-    --click-darkness: brightness(60%);
+    --white-overlay: invert(0%);
+    --black-overlay: invert(100%);
 
-    --hover-brightness: brightness(120%);
-    --click-brightness: brightness(140%);
+    
+    --hover-darkness: brightness(120%);
+    --click-darkness: brightness(140%);
+
+    --hover-brightness: brightness(80%);
+    --click-brightness: brightness(60%);
 
 
 
@@ -72,29 +78,59 @@
     --transition-speed: 100ms;
 }
 
+#icon-moon{
+    display: flex;
+}
+
+#icon-sun{
+    display: none;
+}
 
 @media (prefers-color-scheme: dark) {
     :root {
 
         --background-color:rgb(11, 17, 22);
-
+        --select-color: white;
         --text-color: white;
     
         --primary-color: #6eb9f5;
+        --primary-overlay: brightness(0) saturate(100%) invert(72%) sepia(14%) saturate(3999%) hue-rotate(180deg) brightness(103%) contrast(92%);
+    
         --primary-text-color: black;
     
-        --secondary-color: rgb(81, 97, 114);
+        --secondary-color: rgb(78, 88, 117);
         --secondary-text-color: white;
     
-        --surface-low-color: rgba(215, 233, 247, 0.5);
-        --surface-color: rgba(39, 44, 48, 0.5);
-        --surface-higher-color: rgba(59, 71, 80, 0.5);
-        --surface-high-color: rgba(83, 107, 126, 0.5);
-        --surface-highest-color: rgba(113, 151, 182, 0.5);
+        --surface-low-color: rgb(26, 31, 36);
+        --surface-color: rgb(31, 37, 43);
+        --surface-higher-color: rgb(48, 58, 66);
+        --surface-high-color: rgb(53, 70, 85);
+        --surface-highest-color: rgb(61, 83, 100);
     
         --outline-color: rgba(255, 255, 255, 0.75);
     
         --surface-text-color: white;
+
+        --white-overlay: invert(98%) sepia(0%) saturate(879%) hue-rotate(159deg) brightness(111%) contrast(100%);
+        --black-overlay: invert(0%);
+
+        --hover-darkness: brightness(80%);
+        --click-darkness: brightness(60%);
+
+        --hover-brightness: brightness(120%);
+        --click-brightness: brightness(140%);
+
+        --hover-background-color: rgba(255, 255, 255, 0.1);
+        --click-background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    
+    #icon-moon{
+        display: none;
+    }
+
+    #icon-sun{
+        display: flex;
     }
 }
 
@@ -403,6 +439,7 @@ button.owl-prev:active {
     width: auto;
     height: 50px;
     margin-right: 20px;
+    filter: var(--primary-overlay);
 }
 
 .layout-horizontal{
@@ -429,6 +466,7 @@ button.owl-prev:active {
     margin-right: 100px;
     align-self: stretch;
     min-width: 0px;
+
 
     animation-name: floatFromRight; 
     animation-duration: 1s; 
@@ -519,6 +557,16 @@ button.owl-prev:active {
 
 }
 
+.vertical-image{
+    width: 200px;
+    max-width: 200px;
+}
+
+.vertical-image, .large-image{
+    margin-right: 25px;
+    
+}
+
 .large-image{
     max-width: 300px;
     width: 300px;
@@ -527,7 +575,7 @@ button.owl-prev:active {
     min-width: auto;
     border-radius: 25px;
     display: block;
-    margin-right: 25px;
+
     align-self: flex-start;
     object-fit: cover;
 }
@@ -557,6 +605,8 @@ button.owl-prev:active {
 }
 
 
+
+
 .larger-image{   
     display: flex !important;
     align-self: stretch !important;
@@ -580,7 +630,7 @@ button.owl-prev:active {
 
     width: 100%;
     height: 50px;
-    filter: invert(98%) sepia(0%) saturate(879%) hue-rotate(159deg) brightness(111%) contrast(100%);
+    filter: var(--white-overlay);
     animation-name: floating; 
     animation-duration: 2s; 
     animation-iteration-count: infinite; 
@@ -596,41 +646,52 @@ button.owl-prev:active {
 .webbar{
     display: flex;
     background-color: var(--surface-color);
-    max-width: 100% !important;
-    width: 100% !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
     box-shadow: var(--box-shadow);
+
 }
 
 .webbar > div{
-    max-width: var(--page-width);
+
     margin: auto;
+    display: flex;
+    max-width: var(--page-width);
+    width: unset !important;
+    flex: 1;
+    padding-left: var(--text-margin);
 }
 
-#icon-sun, #icon-moon{
-display: flex;
-width: auto;
-padding: var(--button-padding-vertical);
-margin: var(--text-margin);
-border-radius: 100%;
-transition: background-color, var(--transition-speed);
+#theme{
+    display: flex;
+    height: auto;
+    width: auto;
+    aspect-ratio: 1/1;
+    padding: var(--button-padding-vertical);
+    margin-left: var(--text-margin) !important;
+    margin-top: var(--text-margin) !important;
+    margin-bottom: var(--text-margin) !important;
+    border-radius: 100%;
+    transition: background-color, var(--transition-speed);
+    margin-right: calc(var(--text-margin) * 2);
+
 }
 
-#icon-sun:hover, #icon-moon:hover{
+#theme:hover{
     background-color: var(--hover-background-color);
 }
 
-#icon-sun:active, #icon-moon:active{
+#theme:active{
     background-color: var(--click-background-color);
 }
 
-#icon-sun {
 
-  }
-  
-#icon-moon {
 
+#icon-moon, #icon-sun{
+
+    height: auto;
+    width: auto;
 }
-
 
 .main-content{
     
@@ -656,19 +717,29 @@ transition: background-color, var(--transition-speed);
     width: 100%;
 }
 
-
-.banner, .banner > img{
+.banner{
     height: calc(100dvh - 
     var(--toolbar-height) - var(--arrow-height));
+    overflow:hidden;
     width: 100%;
+}
+
+
+.banner, .banner > img{
     position: relative;
     border-radius: 0px;
 }
 
 .banner > img, .banner.jesus > img{
+    height: calc(100dvh - 
+    var(--toolbar-height) - var(--arrow-height) + 4vh);
     object-fit: cover;
     filter: brightness(50%) blur(1vh);
-    
+    margin-left:-3vh;
+    margin-right:-3vh;
+    margin-top:-3vh;
+    margin-bottom:-3vh;
+    width: calc(100vw + 4vh);
 }
 
 .banner.jesus > img{
@@ -688,7 +759,8 @@ transition: background-color, var(--transition-speed);
 
 .tab-layout{
     align-self: stretch;
-    margin-left: auto;
+   flex: 1;
+   justify-content: end;
 }
 
 .tab{
@@ -722,7 +794,7 @@ transition: background-color, var(--transition-speed);
 }
 
 .tab:hover{
-    background-color: var(--surface-color);
+    background-color: var(--surface-higher-color);
     box-shadow: var(--box-shadow);
 }
 
@@ -754,7 +826,7 @@ transition: background-color, var(--transition-speed);
 .cards > a{
     display: flex;
     flex: 1;
-    color: white !important;
+    color: var(--text-color) !important;
     text-decoration: none !important;
     transition: filter var(--transition-speed);
 }
@@ -762,7 +834,7 @@ transition: background-color, var(--transition-speed);
 .cards > a > div, .cards > div{
     align-items: center;
     display: flex;
-    background-color: var(--surface-higher-color);
+    background-color: var(--surface-low-color);
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
@@ -771,6 +843,9 @@ transition: background-color, var(--transition-speed);
     flex: 1;
 }
 
+.summary-container.center > h2{
+    color: var(--text-color);
+}
 
 .cards div p{
     height: min-content;
@@ -788,13 +863,17 @@ img{
     height: auto;
 }
 
+.white-icon{
+    filter: var(--black-overlay);
+}
+
 #me{
     cursor: pointer;
 }
 
 
 .summary-container{
-    background-color: var(--surface-higher-color);
+    background-color: var(--surface-low-color);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -825,13 +904,13 @@ p.carousel-title{
 
 a.summary-container:hover{
     filter: var(--hover-brightness);
-    border: 2.5px solid white;
+    border: 2.5px solid var(--select-color);
   
 }
 
 a.summary-container:active{
     filter: var(--click-brightness);
-    border: 5px solid white;
+    border: 5px solid var(--select-color);
 
 }
 
@@ -879,8 +958,9 @@ b{
     font-weight: 300;
     padding-left: 16.46px;
     padding-right: 16.46px;
-    color: var(--text-color) !important;
+    color: var(--secondary-text-color) !important;
     background-color: var(--secondary-color);
+
     border-radius: 100px;
     box-shadow: var(--box-shadow);
 
@@ -1001,6 +1081,16 @@ button.owl-prev, button.owl-next{
 
         @media (max-width: 880px) {
 
+            .webbar{
+                
+                align-items: center;
+            }
+
+            #theme{
+                height: var(--tab-small-height);
+                
+            }
+
             .include-my-head{
                 margin-top: 0px !important;
             }
@@ -1031,7 +1121,12 @@ button.owl-prev, button.owl-next{
                 var(--toolbar-height) - var(--tab-height)); 
             }
 
-            .banner, .banner > img{
+            .banner > img{
+                height: calc(100dvh - 
+                var(--toolbar-height) - var(--arrow-height) - var(--tab-height) + 4vh);   
+            }
+
+            .banner{
                 height: calc(100dvh - 
                 var(--toolbar-height) - var(--arrow-height) - var(--tab-height));   
             }
@@ -1044,6 +1139,7 @@ button.owl-prev, button.owl-next{
                 margin-left: auto;
                 margin-right: auto;
                 height: var(--tab-height);
+                flex: unset;
             }
 
             .banner-foreground > div.image-container{
@@ -1086,6 +1182,24 @@ button.owl-prev, button.owl-next{
 
             @media (max-width: 546px) {
             
+
+                
+                #theme{
+                    display: flex;
+                    aspect-ratio: 1/1;
+                    margin-left: 0px !important;
+                    margin-top: 0px !important;
+                    margin-bottom: 0px !important;
+                    margin-right: var(--text-margin);
+                }
+
+                #icon-sun{
+           
+                    width: unset !important;
+                    flex: 1 !important;
+          
+                }
+
                 img{
                     width: 100%;
         
@@ -1167,7 +1281,12 @@ button.owl-prev, button.owl-next{
                     var(--toolbar-small-height) - var(--tab-small-height));    
                 }
 
-                .banner, .banner img{
+                .banner img{
+                    height: calc(100dvh - 
+                    var(--toolbar-small-height) - var(--tab-small-height) - var(--arrow-height) + 4vh);   
+                }
+
+                .banner{
                     height: calc(100dvh - 
                     var(--toolbar-small-height) - var(--tab-small-height) - var(--arrow-height));   
                 }
