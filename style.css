@@ -1195,7 +1195,7 @@ button.owl-prev, button.owl-next{
                 #theme{
                     display: flex;
                     aspect-ratio: 1/1;
-        
+                    height: auto;
                 }
 
                 #icon-sun{
