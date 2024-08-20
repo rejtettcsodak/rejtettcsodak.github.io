@@ -12,7 +12,7 @@
     --primary-overlay: brightness(0) saturate(100%) invert(40%) sepia(26%) saturate(5343%) hue-rotate(197deg) brightness(99%) contrast(87%);
     --primary-text-color: white;
 
-    --secondary-color: rgb(143, 173, 223);
+    --secondary-color: rgb(159, 187, 236);
     --secondary-text-color: black;
 
     --surface-low-color: rgb(235, 243, 250);
@@ -653,7 +653,7 @@ button.owl-prev:active {
     width: 100vw !important;
     box-shadow: var(--box-shadow);
     z-index: 100;
-
+    
 }
 
 .webbar > div{
@@ -663,14 +663,13 @@ button.owl-prev:active {
     max-width: var(--page-width);
     width: unset !important;
     flex: 1;
-    padding-left: var(--text-margin);
+    padding-left: calc(var(--toolbar-height) - var(--button-padding-vertical) + var(--text-margin));
 }
 
 #theme{
     display: flex;
-    height: auto;
-    width: auto;
-    aspect-ratio: 1/1;
+    height: calc(var(--toolbar-height) - (var(--text-margin) + var(--button-padding-vertical) )* 2);
+    width: calc(var(--toolbar-height) - (var(--text-margin) + var(--button-padding-vertical)) * 2);
     padding: var(--button-padding-vertical);
     margin-left: var(--text-margin) !important;
     margin-top: var(--text-margin) !important;
@@ -693,6 +692,7 @@ button.owl-prev:active {
 
 #icon-moon, #icon-sun{
 
+    flex: 1;
     height: auto;
     width: auto;
 }
@@ -1065,7 +1065,11 @@ button.owl-prev, button.owl-next{
 
 }
 
+@media (max-width: 1340px){
+    .webbar > div{
 
+        padding-left: var(--text-margin);
+    }
 @media (max-width: 1250px){
     button.owl-prev{
         margin-left: 0px;
@@ -1092,6 +1096,12 @@ button.owl-prev, button.owl-next{
             .webbar{
                 
                 align-items: center;
+            }
+
+            .webbar > div{
+
+    
+                padding-left: calc(var(--toolbar-height) - var(--button-padding-vertical) + var(--text-margin));
             }
 
             #theme{
@@ -1190,12 +1200,16 @@ button.owl-prev, button.owl-next{
 
             @media (max-width: 546px) {
             
+                .webbar > div{
 
+      
+                    padding-left: var(--text-margin);
+                }
                 
                 #theme{
                     display: flex;
-                    aspect-ratio: 1/1;
-                    height: auto;
+                    width: calc(var(--toolbar-small-height) - (var(--text-margin) + var(--button-padding-vertical)) * 2);
+                    height: calc(var(--toolbar-small-height) - (var(--text-margin) + var(--button-padding-vertical)) * 2);
                 }
 
                 #icon-sun{
@@ -1321,5 +1335,7 @@ button.owl-prev, button.owl-next{
         }
     }
 
+
+}
 
 }
