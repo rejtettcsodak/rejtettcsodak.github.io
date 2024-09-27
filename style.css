@@ -6,6 +6,8 @@
     --background-color:white;
 
     --text-color: black;
+    --text-color-semi-transparent: rgba(0, 0, 0, 0.5);
+    --text-color-transparent: rgba(0, 0, 0, 0);
     --select-color: var(--surface-low-color);
 
     --primary-color: #2481eb;
@@ -29,6 +31,10 @@
     --click-background-color: rgba(0, 0, 0, 0.2);
 
     --box-shadow: 0px 1px 3.33px rgba(0, 0, 0, 0.33);
+
+    --dark-primary-color: #6eb9f5;
+    --dark-outline-color: rgba(255, 255, 255, 0.75);
+    --dark-primary-overlay: brightness(0) saturate(100%) invert(72%) sepia(14%) saturate(3999%) hue-rotate(180deg) brightness(103%) contrast(92%);
 
     --white-overlay: invert(0%);
     --black-overlay: invert(100%);
@@ -92,6 +98,8 @@
         --background-color:rgb(11, 17, 22);
         --select-color: white;
         --text-color: white;
+        --text-color-semi-transparent: rgba(255, 255, 255, 0.5);
+        --text-color-transparent: rgba(255, 255, 255, 0);
     
         --primary-color: #6eb9f5;
         --primary-overlay: brightness(0) saturate(100%) invert(72%) sepia(14%) saturate(3999%) hue-rotate(180deg) brightness(103%) contrast(92%);
@@ -272,6 +280,9 @@ a:hover{
     transition: filter var(--transition-speed);
 }
 
+.margin-on-size{
+    margin-right: 25px;
+}
 
 ul{
   margin-top: 0px;
@@ -316,6 +327,15 @@ button, .button, .primary {
     margin-bottom: -5px;
     margin-right: -5px;
     margin-left: 5px;
+}
+
+.button.dark{
+    border-color: var(--dark-outline-color) !important;
+    color: var(--dark-primary-color) !important;
+}
+
+.button.dark > img{
+    filter: var(--dark-primary-overlay);
 }
 
 .button img{
@@ -478,6 +498,34 @@ button.owl-prev:active {
 
 }
 
+.img-group{
+    flex: 1;
+    display: flex;
+    align-content: space-evenly;
+}
+
+
+
+.img-group > img:nth-child(2){
+    flex: 3;
+    width: 1% !important;
+    display: flex;
+    object-fit: cover;
+    border-radius: 0px;
+    z-index: 2;
+    box-shadow:0px 0px 25px rgba(0, 0, 0, 0.66);
+}
+
+.img-group > img, .img-group > img:last-child{
+    flex: 2;
+    width: 1% !important;
+    display: flex;
+    object-fit: cover;
+    border-radius: 0px;
+    box-shadow:0px 0px 0px rgba(0, 0, 0, 0.66);
+    
+}
+
 @keyframes floatFromRight { 
     0% {
         transform: translate(125px,  0px);
@@ -563,6 +611,7 @@ button.owl-prev:active {
 .vertical-image{
     width: 200px;
     max-width: 200px;
+    margin-bottom: auto;
 }
 
 .vertical-image, .large-image{
@@ -629,15 +678,53 @@ button.owl-prev:active {
     justify-content: center;
 }
 
+.arrow-container{
+    display: block;
+    width: 100%;
+    height: 50px !important;
+    position: relative;
+}
+
 .arrow{
 
-    width: 100%;
+    width: 50px;
     height: 50px;
     filter: var(--white-overlay);
     animation-name: floating; 
     animation-duration: 2s; 
     animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 25px) ;
+}
+
+.arrow-bg{
+
+    width: 50px;
+    height: 50px;
+    animation-name: pulsing; 
+    animation-duration: 2s; 
+    animation-iteration-count: infinite; 
     animation-timing-function: ease-in-out; 
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 25px);
+    filter: blur(5px);
+}
+
+@keyframes pulsing { 
+    0%      {
+        transform:scale(0); 
+        background-color: var(--text-color-semi-transparent);
+   
+    } 
+    50%    {
+        transform: scale(1.25);
+        background-color: var(--text-color-transparent);
+ 
+    } 
 }
 
 @keyframes floating { 
@@ -849,6 +936,7 @@ button.owl-prev:active {
 
 .summary-container.center h2, .summary-container.center p{
     color: var(--text-color);
+    z-index: 3;
 }
 
 .cards div p{
@@ -922,19 +1010,19 @@ a.summary-container:active{
 
 }
 
-a.summary-container img{
+a.summary-container > img{
     border-radius: var(--border-radius);
     transition: all !important;
 
 }
 
 
-a.summary-container:hover img{
+a.summary-container:hover > img{
     border-radius: 7.5px;
 
 }
 
-a.summary-container:active img{
+a.summary-container:active > img{
     border-radius: 5px;
 }
 
@@ -974,7 +1062,7 @@ b{
 
 }
 
-.summary-container > div, .summary-container > h2, .summary-container > h3, .summary-container > p{
+.summary-container > div:not(.img-group), .summary-container > h2, .summary-container > h3, .summary-container > p{
     position: absolute;
 
     bottom: 0px;
@@ -985,15 +1073,17 @@ b{
    margin-bottom: 0px;
    box-sizing: border-box;
    width: 100%;
+   z-index: 3;
 }
 
 .summary-container > h3{
     text-align: center;
     font-size:large;
     padding-top: var(--big-space) !important;
+    z-index: 3;
 }
 
-a.summary-container img:last-child{
+a.summary-container > img:last-child{
     position: absolute;
     width: 75px;
     height: auto;
@@ -1117,11 +1207,24 @@ button.owl-prev, button.owl-next{
                 width: 100%;
             }
 
-            .large-image{
-                margin-right: auto;
-                margin-left: auto;
+.large-image{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+            .large-image, .vertical-image{
+       
                 margin-bottom: 15px;
+                margin-right: 0px !important;
             }
+
+    
+
+            .margin-on-size{
+                margin-right: 0px;
+                margin-bottom: 25px;
+            }
+            
 
             .large-image-container{
                 display: block;
@@ -1196,6 +1299,16 @@ button.owl-prev, button.owl-next{
             .banner-foreground h1,
             .banner-foreground h2{ 
                 text-align: center;
+            }
+
+            .banner-foreground > div{
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            .banner-foreground a{
+                align-self: center;
             }
 
             @media (max-width: 546px) {
