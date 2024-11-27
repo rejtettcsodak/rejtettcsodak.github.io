@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="media/icons/favi.webp">
+    <link rel="stylesheet" href="owl.carousel.css">
+    <title>Puskas 2020b 12.B</title>
+</head>
+<body>
+    <div class="webbar">
+        <div class="direction-on-size-3">
+            <a href="12b" class="layout-horizontal toolbar">
+                <img src="media/class/logo.webp" alt="Logo">
+                <h1 class>Puskás 2020b</h1>
+            </a>    
+            <div class="layout-horizontal tab-layout">
+                <a href="/" class="tab">Kezdőlap</a>
+                <a href="10b" class="tab">10.B</a>
+                <a href="11b" class="tab">11.B</a>
+                <a href="12b" class="tab">12.B</a>
+                <a href="13b" class="tab selected">13.B</a>
+            </div>
+        </div>
+        <a id="theme" href="javascript:toggle_theme();">
+            <img id="icon-moon" src="media/icons/moon.svg">
+            <img id="icon-sun" src="media/icons/sun.svg">
+        </a>
+    </div>
+    <div class="main-scroll-area">
+
+        <div class="banner jesus">
+            <img src="media/class/13b/banner.webp" alt="Banner" style="filter: blur(0px) brightness(100%);">
+        </div>
+
+        <a href="#about-me" class="arrow-container">
+            <div alt="down arrow" class="arrow-bg"></div>
+            <img src="media/icons/more.svg" alt="down arrow" class="arrow">
+        </a>
+        <div class="main-content">
+            <h3>Közösségi média</h3>
+            <div class="chip-group">
+                <a href="https://www.youtube.com/@puskas2020b" target="_blank">YouTube</a>
+                <a href="https://www.tiktok.com/@puskas2020b" target="_blank">TikTok</a>
+                <a href="https://www.instagram.com/puskas2020b" target="_blank">Instagram</a>
+            </div>  
+        </div>
+    </div>
+    <div class="layout-horizontal navigationbar-div">
+        <a href="/" class="tab">Kezdőlap</a>
+        <a href="10b" class="tab">10.B</a>
+        <a href="11b" class="tab">11.B</a>
+        <a href="12b" class="tab">12.B</a>
+        <a href="13b" class="tab selected">13.B</a>
+    </div>
+    <script src="Theme.js"></script>
+
+        <!-- Jquery CDN  -->
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<!-- Owl Slider  -->
+<script src="owl.carousel.js"></script>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    nav:true,
+    items: 3,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    dots:false ,
+    responsive:{
+        0:{
+             items:1
+         },
+        700:{
+             items:2
+         },
+         1000:{
+             items:3
+         }   
+     }
+})
+</script>
+</body>
+</html>
