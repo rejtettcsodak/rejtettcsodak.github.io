@@ -40,12 +40,33 @@
             <img src="media/icons/more.svg" alt="down arrow" class="arrow">
         </a>
         <div class="main-content">
-            <h3>Közösségi média</h3>
+            <h3 id="about-me">Közösségi média</h3>
             <div class="chip-group">
                 <a href="https://www.youtube.com/@puskas2020b" target="_blank">YouTube</a>
                 <a href="https://www.tiktok.com/@puskas2020b" target="_blank">TikTok</a>
                 <a href="https://www.instagram.com/puskas2020b" target="_blank">Instagram</a>
             </div>  
+
+            <h3>Szalagavatóvideónk</h3>
+            <p>5 Puskásban eltöltött évünk összefoglaló videója</p>
+            <a class="summary-container" href="https://www.youtube.com/watch?v=nDJWkIryhFM" target="_blank" style="height: auto;">
+                <img src="https://img.youtube.com/vi/nDJWkIryhFM/maxresdefault.jpg"></img>
+                <h3>Puskás 2020b | Szalagavatóvideó | (2024)</h3>
+                <img src="media/icons/youtube.svg" alt="YouTube icon"></img>
+            </a> 
+            <h3>Alejandro Rafael Garcia Lopez története</h3>
+            <p></p>
+            <div class="bd-grid owl-carousel">   
+                <div class="summary-container jesus">  
+                    <img src="media/class/13b/capa1_600h.webp" alt="Cápa kép">
+                </div>   
+                <div class="summary-container jesus">  
+                    <img src="media/class/13b/" alt="Cápa kép">       
+                </div>    
+                <div class="summary-container jesus">  
+                    <img src="media/class/13b/capa2.webp" alt="Cápa kép">
+                </div>         
+            </div>
         </div>
     </div>
     <div class="layout-horizontal navigationbar-div">
@@ -70,7 +91,7 @@
     $('.owl-carousel').owlCarousel({
     loop:true,
     nav:true,
-    items: 3,
+    items: 2,
     autoplay:true,
     autoplayTimeout:5000,
     autoplayHoverPause:true,
@@ -81,10 +102,7 @@
          },
         700:{
              items:2
-         },
-         1000:{
-             items:3
-         }   
+         }
      }
 })
 </script>
