@@ -528,7 +528,7 @@ button.owl-prev:active {
 
 @keyframes floatFromRight { 
     0% {
-        transform: translate(125px,  0px);
+        transform: translate(0px,  125px);
         opacity: 0;} 
     100%   {
         transform: translate(0px, 0px);
@@ -537,7 +537,7 @@ button.owl-prev:active {
 
 @keyframes floatFromLeft { 
     0% {
-        transform: translate(-125px,  0px);
+        transform: translate(0px,  125px);
         opacity: 0;} 
     100%   {
         transform: translate(0px, 0px);

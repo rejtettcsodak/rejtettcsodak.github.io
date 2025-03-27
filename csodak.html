@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="media/icons/favi.webp">
+    <link rel="stylesheet" href="owl.carousel.css">
+    <title>Magyarország csodái</title>
+</head>
+<body>
+    <div class="webbar">
+        <div class="direction-on-size-3">
+            <a href="/" class="layout-horizontal toolbar">
+          
+                <h1>Magyarország csodái</h1>
+            </a>    
+            <div class="layout-horizontal tab-layout">
+                <a href="/" class="tab">Kezdőlap</a>
+                <a href="csodak" class="tab">Csodák</a>
+                <a href="elerhetoseg" class="tab">Elérhetőség</a>
+            </div>
+        </div>
+        <a id="theme" href="javascript:toggle_theme();">
+            <img id="icon-moon" src="media/icons/moon.svg">
+            <img id="icon-sun" src="media/icons/sun.svg">
+        </a>
+    </div>
+    <div class="main-scroll-area">
+        <div class="main-content">
+            <div class="align-center">
+            <h2 style="margin-top: 50px;">Techinai problémák miatt jelenleg a rejtett csodák teljes listája nem elérhető</h2>
+            <p>Ameddig a problémát meg nem oldjuk, a kezdőlapon megjelent lehetőségekről navigálás továbbra is működik</p>
+ 
+                <a href="/" class="primary singular">Kezdőlap</a>
+
+        </div>
+        </div>
+    </div>
+    <div class="layout-horizontal navigationbar-div">
+        <a href="/" class="tab">Kezdőlap</a>
+        <a href="csodak" class="tab selected">Csodák</a>
+        <a href="elerhetoseg" class="tab">Elérhetőség</a>
+    </div>
+    <script src="Theme.js"></script>
+
+            <!-- Jquery CDN  -->
+            <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+          
+          <!-- Owl Slider  -->
+          <script src="owl.carousel.js"></script>
+          
+          <script>
+              $('.owl-carousel').owlCarousel({
+              loop:true,
+              nav:true,
+              items: 3,
+              autoplay:true,
+              autoplayTimeout:5000,
+              autoplayHoverPause:true,
+              dots:false ,
+              responsive:{
+        0:{
+             items:1
+         },
+        700:{
+             items:2
+         },
+         1000:{
+             items:3
+         }   
+     }
+          })
+          </script>
+</body>
+</html>
