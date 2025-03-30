@@ -10,18 +10,18 @@
     --text-color-transparent: rgba(0, 0, 0, 0);
     --select-color: var(--surface-low-color);
 
-    --primary-color: #2481eb;
+    --primary-color: #e78932;
     --primary-overlay: brightness(0) saturate(100%) invert(40%) sepia(26%) saturate(5343%) hue-rotate(197deg) brightness(99%) contrast(87%);
     --primary-text-color: white;
 
-    --secondary-color: rgb(159, 187, 236);
+    --secondary-color: rgb(236, 215, 159);
     --secondary-text-color: black;
 
-    --surface-low-color: rgb(235, 243, 250);
-    --surface-color: rgb(212, 220, 231);
-    --surface-higher-color: rgb(159, 174, 196);
-    --surface-high-color: rgb(130, 147, 173);
-    --surface-highest-color: rgb(95, 114, 143);
+    --surface-low-color: rgb(250, 246, 235);
+    --surface-color: rgb(231, 223, 212);
+    --surface-higher-color: rgb(196, 184, 159);
+    --surface-high-color: rgb(173, 154, 130);
+    --surface-highest-color: rgb(143, 124, 95);
 
     --outline-color: rgba(0, 0, 0, 0.75);
 
@@ -68,14 +68,14 @@
     --button-padding: var(--button-padding-vertical) var(--button-padding-horizontal);
     --button-padding-with-outline: 9px 19px;
 
-    --chip-corner-radius: 7.5px;
+    --chip-corner-radius: 0px;
     --chip-padding: 8px 14px;
 
     --container-margin: 15px;
     --container-small-margin: 5px;
 
     --border-size: 1px;
-    --border-radius: 10px;
+    --border-radius: 0px;
 
     --big-space: 50px;
 
@@ -90,56 +90,6 @@
 
 #icon-sun{
     display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-
-        --background-color:rgb(11, 17, 22);
-        --select-color: white;
-        --text-color: white;
-        --text-color-semi-transparent: rgba(255, 255, 255, 0.5);
-        --text-color-transparent: rgba(255, 255, 255, 0);
-    
-        --primary-color: #6eb9f5;
-        --primary-overlay: brightness(0) saturate(100%) invert(72%) sepia(14%) saturate(3999%) hue-rotate(180deg) brightness(103%) contrast(92%);
-    
-        --primary-text-color: black;
-    
-        --secondary-color: rgb(78, 88, 117);
-        --secondary-text-color: white;
-    
-        --surface-low-color: rgb(26, 31, 36);
-        --surface-color: rgb(31, 37, 43);
-        --surface-higher-color: rgb(48, 58, 66);
-        --surface-high-color: rgb(53, 70, 85);
-        --surface-highest-color: rgb(61, 83, 100);
-    
-        --outline-color: rgba(255, 255, 255, 0.75);
-    
-        --surface-text-color: white;
-
-        --white-overlay: invert(98%) sepia(0%) saturate(879%) hue-rotate(159deg) brightness(111%) contrast(100%);
-        --black-overlay: invert(0%);
-
-        --hover-darkness: brightness(80%);
-        --click-darkness: brightness(60%);
-
-        --hover-brightness: brightness(120%);
-        --click-brightness: brightness(140%);
-
-        --hover-background-color: rgba(255, 255, 255, 0.1);
-        --click-background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    
-    #icon-moon{
-        display: none;
-    }
-
-    #icon-sun{
-        display: flex;
-    }
 }
 
 
@@ -184,36 +134,6 @@ body{
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-}
-
-@media (min-width: 547px) {
-
-    ::-webkit-scrollbar {
-        width: var(--scroll-bar-size);
-        height: var(--scroll-bar-size);
-
-        background-color: var(--surface-color);
-
-        box-shadow: var(--box-shadow);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        min-height: var(--scroll-bar-size);
-     
-        background-color: var(--surface-higher-color);
-        border-radius: var(--scroll-bar-size);
-
-        box-shadow: var(--box-shadow);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: var(--surface-high-color);
-    }
-
-    ::-webkit-scrollbar-thumb:active {
-        background-color: var(--surface-highest-color);
-    }
-
 }
 
 p{
@@ -625,7 +545,7 @@ button.owl-prev:active {
     max-height: 300px;
     height: 300px;
     min-width: auto;
-    border-radius: 25px;
+    border-radius: 0px;
     display: block;
 
     align-self: flex-start;
@@ -690,7 +610,7 @@ button.owl-prev:active {
     width: 50px;
     height: 50px;
     filter: var(--white-overlay);
-    animation-name: floating; 
+
     animation-duration: 2s; 
     animation-iteration-count: infinite; 
     animation-timing-function: ease-in-out;
@@ -703,7 +623,6 @@ button.owl-prev:active {
 
     width: 50px;
     height: 50px;
-    animation-name: pulsing; 
     animation-duration: 2s; 
     animation-iteration-count: infinite; 
     animation-timing-function: ease-in-out; 
@@ -782,6 +701,7 @@ button.owl-prev:active {
     flex: 1;
     height: auto;
     width: auto;
+    
 }
 
 .main-content{
@@ -981,7 +901,7 @@ img{
     margin-right: 7.5px !important;
     margin-left: 7.5px !important;
     border-radius: var(--border-radius);
-    color: white;
+    color: var(--text-color);
     border: 0px solid white;
     box-sizing:border-box;
     width:auto;
@@ -993,20 +913,20 @@ p.carousel-title{
 }
 
 .summary-container:visited{
-    color: white;
+    color: var(--text-color);
 
 }
 
 
 a.summary-container:hover{
     filter: var(--hover-brightness);
-    border: 2.5px solid var(--select-color);
+
   
 }
 
 a.summary-container:active{
     filter: var(--click-brightness);
-    border: 5px solid var(--select-color);
+
 
 }
 
@@ -1054,8 +974,8 @@ b{
     font-weight: 300;
     padding-left: 16.46px;
     padding-right: 16.46px;
-    color: var(--secondary-text-color) !important;
-    background-color: var(--secondary-color);
+    color: var(--primary-text-color) !important;
+    background-color: var(--primary-color);
 
     border-radius: 100px;
     box-shadow: var(--box-shadow);
@@ -1066,7 +986,7 @@ b{
     position: absolute;
 
     bottom: 0px;
-    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0));
+    background: var(--secondary-color);
    padding: var(--container-margin);
    border-bottom-left-radius: var(--border-radius);
    border-bottom-right-radius: var(--border-radius);
@@ -1123,7 +1043,7 @@ a.summary-container > img:last-child{
 
 .summary-container h2{
 
-    text-shadow: var(--box-shadow);
+
    
 }
 .summary-container > img, .summary-container iframe, .summary-container > a{
